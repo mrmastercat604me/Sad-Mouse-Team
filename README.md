@@ -1,4 +1,7 @@
 # Sad-Mouse-Project
  This is our project for Computer Programming
+ <br>
  Contributors:
- Duckling604(mrmastercat604) , JesseWillSing , Ben Visser(CaptAsthma) , Wesley(InfamousCow03)
+ <br>
+ <br>
+ Duckling604(mrmastercat604) ,<br> JesseWillSing ,<br> Ben Visser(CaptAsthma) ,<br> Wesley(InfamousCow03)
