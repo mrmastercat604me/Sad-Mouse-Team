@@ -14,4 +14,4 @@ while run:
             fp.write(f"{id} {name} {gpa}\n")
             time.sleep(1)
             print("Added to Database")
-            print("-----------------------------")
+            print("-"*10)
