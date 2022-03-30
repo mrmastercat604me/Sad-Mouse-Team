@@ -2,8 +2,8 @@ import os, time
 run = True
 file_path = r'saves.txt'
 while run:
-    with open(file_path, 'w+') as fp:
-        inpt = input("[E]xit, Delete, Update, [R]ead //ID, or [C]reate?: ")
+    with open(file_path, 'a+') as fp:
+        inpt = input("[C]reate,[E]xit, [D]elete//ID, Update, [R]ead //ID: ")
         if inpt == "e" or inpt == "E":
             print("Goodbye")
             run = False
