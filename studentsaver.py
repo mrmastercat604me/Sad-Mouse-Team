@@ -3,7 +3,7 @@ run = True
 file_path = r'saves.txt'
 while run:
     with open(file_path, 'a+') as fp:
-        inpt = input("[C]reate,[E]xit, [D]elete//ID, Update, [R]ead //ID: ")
+        inpt = input("[C]reate,[E]xit, [D]elete//ID, [U]pdate//ID, [R]ead //ID: ")
         if inpt == "e" or inpt == "E":
             print("Goodbye")
             run = False
@@ -15,3 +15,5 @@ while run:
             time.sleep(1)
             print("Added to Database")
             print("-"*10)
+        elif inpt == "r" or inpt == "R":
+            pass
