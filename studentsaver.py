@@ -1,4 +1,4 @@
-import os, time
+import time
 run = True
 file_path = r'saves.txt'
 while run:
