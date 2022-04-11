@@ -16,4 +16,10 @@ while run:
             print("Added to Database")
             print("-"*10)
         elif inpt == "r" or inpt == "R":
-            pass
+            with open(file_path, 'r') as fpr:
+                linecount = 0
+                for linecount, line in enumerate(fpr):
+                    pass
+                print(f"Total Lines: {linecount}")
+                id_find = input("Student Id?: ")
+    fp.close
