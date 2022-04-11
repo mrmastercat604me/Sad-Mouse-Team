@@ -21,7 +21,7 @@ while run:
             print("Added to Database")
             print("-"*10)
         #READ WORKINGS
-        elif inpt == "r" or inpt == "R":
+        elif "r" in inpt or "R" in inpt:
             with open(file_path, 'r') as fpr:
                 id_find = input("Student Id?: ")
                 while fpr.tell() != os.fstat(fpr.fileno()).st_size:
@@ -38,9 +38,9 @@ while run:
                     print("Student ID Not Found.")
                 fpr.close
         #DELETE WORKINGS
-        elif inpt == "d" or inpt == "D":
+        elif "d" in inpt or "D" in inpt:
             pass
         #UPDATE WORKINGS
-        elif inpt == "u" or inpt == "U":
+        elif "u" in inpt or "U" in inpt:
             pass
     fp.close
