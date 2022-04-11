@@ -1,4 +1,5 @@
 import time
+import os
 run = True
 file_path = r'DATA.txt'
 while run:
@@ -20,20 +21,26 @@ while run:
             print("Added to Database")
             print("-"*10)
         #READ WORKINGS
-        elif inpt == "r" or inpt == "R":
+        elif "r" in inpt or "R" in inpt:
             with open(file_path, 'r') as fpr:
-                linecount = 0
-                for linecount, line in enumerate(fpr):
-                    pass
-                print(f"Total Lines: {linecount}")
                 id_find = input("Student Id?: ")
+                while fpr.tell() != os.fstat(fpr.fileno()).st_size:
+                    id = fpr.readline().replace("\n", "")
+                    name = fpr.readline().replace("\n", "")
+                    gpa = fpr.readline().replace("\n", "")
+                    if id == id_find:
+                        print(id)
+                        print(name)
+                        print(gpa)
 
-
-            fpr.close
+                        break
+                else:
+                    print("Student ID Not Found.")
+                fpr.close
         #DELETE WORKINGS
-        elif inpt == "d" or inpt == "D":
+        elif "d" in inpt or "D" in inpt:
             pass
         #UPDATE WORKINGS
-        elif inpt == "u" or inpt == "U":
+        elif "u" in inpt or "U" in inpt:
             pass
     fp.close
