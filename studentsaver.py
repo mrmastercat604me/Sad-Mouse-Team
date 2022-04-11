@@ -25,7 +25,9 @@ while run:
                     pass
                 print(f"Total Lines: {linecount}")
                 id_find = input("Student Id?: ")
-
+                for line in (linecount+1):
+                    fpr.readline(line)
+                    
 
             fpr.close
         #DELETE WORKINGS
