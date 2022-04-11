@@ -1,6 +1,6 @@
 import time
 run = True
-file_path = r'data.txt'
+file_path = r'DATA.txt'
 while run:
     with open(file_path, 'a+') as fp:
         inpt = input("[C]reate,[E]xit, [D]elete//ID, [U]pdate//ID, [R]ead //ID: ")
