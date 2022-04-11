@@ -1,4 +1,5 @@
 import time
+import os
 run = True
 file_path = r'DATA.txt'
 while run:
@@ -22,14 +23,20 @@ while run:
         #READ WORKINGS
         elif inpt == "r" or inpt == "R":
             with open(file_path, 'r') as fpr:
-                linecount = 0
-                for linecount, line in enumerate(fpr):
-                    pass
-                print(f"Total Lines: {linecount}")
                 id_find = input("Student Id?: ")
+                while fpr.tell() != os.fstat(fpr.fileno()).st_size:
+                    id = fpr.readline().replace("\n", "")
+                    name = fpr.readline().replace("\n", "")
+                    gpa = fpr.readline().replace("\n", "")
+                    if id == id_find:
+                        print(id)
+                        print(name)
+                        print(gpa)
 
-
-            fpr.close
+                        break
+                else:
+                    print("Student ID Not Found.")
+                fpr.close
         #DELETE WORKINGS
         elif inpt == "d" or inpt == "D":
             pass
