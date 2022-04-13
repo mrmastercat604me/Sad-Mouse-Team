@@ -39,7 +39,21 @@ while run:
                 fpr.close
         #DELETE WORKINGS
         elif "d" in inpt or "D" in inpt:
-            pass
+            with open(file_path, 'a+') as fpd:
+                id_find = input("Student Id?: ")
+                while fpd.tell() != os.fstat(fpd.fileno()).st_size:
+                    id = fpd.readline().replace("\n", "")
+                    name = fpd.readline().replace("\n", "")
+                    gpa = fpd.readline().replace("\n", "")
+                    if id == id_find:
+
+
+                    else
+                    print("Error information not found")
+                    
+
+
+
         #UPDATE WORKINGS
         elif "u" in inpt or "U" in inpt:
             pass
