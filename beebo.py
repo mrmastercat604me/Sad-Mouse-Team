@@ -1,7 +1,9 @@
-l1 = []
-with open( "New Text Document.txt", 'r') as fp:
-    l1 = fp.readlines()
+fileaslist = []
+with open( "New Text Document.txt", 'r') as f:
+    fileaslist = f.readlines()
+    f.close()
 with open( "New Text Document.txt", 'w') as fp:
-    for number, line in enumerate(l1):
+    for number, line in enumerate(fileaslist):
         if number not in [1]:
             fp.write(line)
+    fp.close

@@ -39,20 +39,16 @@ while run:
                 fpr.close
         #DELETE WORKINGS
         elif "d" in inpt or "D" in inpt:
-            with open(file_path, 'a+') as fpd:
-                id_find = input("Student Id?: ")
-                while fpd.tell() != os.fstat(fpd.fileno()).st_size:
-                    id = fpd.readline().replace("\n", "")
-                    name = fpd.readline().replace("\n", "")
-                    gpa = fpd.readline().replace("\n", "")
-                    if id == id_find:
-
-
-                    else
-                    print("Error information not found")
-                    
-
-
+            fileaslist = []
+            id_find = input("id? ")
+            with open( "DATA.txt", 'r') as fp:
+                fileaslist = fp.readlines()
+                fp.close()
+            with open( "DATA.txt", 'w') as fp:
+                for number , line in enumerate(fileaslist):
+                    #PROBLEM IT WILL DELETE ANY LINE CONTAINING id_find
+                    if id_find not in line:
+                        fp.write(line)
 
         #UPDATE WORKINGS
         elif "u" in inpt or "U" in inpt:
