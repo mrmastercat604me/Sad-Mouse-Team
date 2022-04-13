@@ -39,16 +39,20 @@ while run:
                 fpr.close
         #DELETE WORKINGS
         elif "d" in inpt or "D" in inpt:
-            fileaslist = []
-            id_find = input("id? ")
+            file_as_list = []
             with open( "DATA.txt", 'r') as fp:
-                fileaslist = fp.readlines()
+                file_as_list = fp.readlines()
                 fp.close()
             with open( "DATA.txt", 'w') as fp:
-                for number , line in enumerate(fileaslist):
-                    #PROBLEM IT WILL DELETE ANY LINE CONTAINING id_find
-                    if id_find not in line:
-                        fp.write(line)
+                id = input("ID: ")
+                line = 0
+                while line != (len(file_as_list)):
+                    if id not in file_as_list[line]:
+                        fp.write(file_as_list[line])
+                        line += 1
+                    elif id in file_as_list[line]:
+                        line += 3
+                fp.close
 
         #UPDATE WORKINGS
         elif "u" in inpt or "U" in inpt:
