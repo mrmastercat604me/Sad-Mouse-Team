@@ -3,7 +3,6 @@ import os
 run = True
 file_path = r'DATA.txt'
 while run:
-    with open(file_path, 'a+') as fp:
         inpt = input("[C]reate,[E]xit, [D]elete//ID, [U]pdate//ID, [R]ead //ID: ")
         #EXIT WORKINGS
         if inpt == "e" or inpt == "E":
@@ -11,15 +10,17 @@ while run:
             run = False
         #CREATE WORKINGS
         elif inpt == "c" or inpt == "C":
-            name = input("Name?: ")
-            id = input("Student_ID?: ")
-            gpa = input("GPA?: ")
-            fp.write(f"{id}\n")
-            fp.write(f"{name}\n")
-            fp.write(f"{gpa}\n")
-            time.sleep(1)
-            print("Added to Database")
-            print("-"*10)
+            with open(file_path, 'a+') as fp:
+                name = input("Name?: ")
+                id = input("Student_ID?: ")
+                gpa = input("GPA?: ")
+                fp.write(f"{id}\n")
+                fp.write(f"{name}\n")
+                fp.write(f"{gpa}\n")
+                time.sleep(1)
+                print("Added to Database")
+                print("-"*10)
+            fp.close()
         #READ WORKINGS
         elif "r" in inpt or "R" in inpt:
             with open(file_path, 'r') as fpr:
@@ -56,5 +57,28 @@ while run:
 
         #UPDATE WORKINGS
         elif "u" in inpt or "U" in inpt:
-            pass
-    fp.close
+            file_as_list = []
+            with open( "DATA.txt", 'r') as fp:
+                file_as_list = fp.readlines()
+                fp.close()
+            with open( "DATA.txt", 'w') as fp:
+                id = input("ID: ")
+                line = 0
+                while line != (len(file_as_list)):
+                    if id not in file_as_list[line]:
+                        fp.write(file_as_list[line])
+                        line += 1
+                    elif id in file_as_list[line]:
+                        line += 3
+                fp.close
+            with open(file_path, 'a+') as fp:
+                name = input("Name?: ")
+                id = input("Student_ID?: ")
+                gpa = input("GPA?: ")
+                fp.write(f"{id}\n")
+                fp.write(f"{name}\n")
+                fp.write(f"{gpa}\n")
+                time.sleep(1)
+                print("Added to Database")
+                print("-"*10)
+            fp.close()
